@@ -1,0 +1,40 @@
+﻿@import '_mixins.scss';
+body{
+    background-color:$main-bg;
+}
+.main-container {
+    width:50%;
+    margin:50px auto 0;
+    padding:15px;
+    h1{
+        text-align:center;
+    }
+    .prod-top {margin-bottom:20px;
+        &:after {
+            @extend .clearfix;
+        }
+        figure {
+            float:left;
+            width:50%;
+            background-color:$white;
+            border:1px solid $border;
+            img {
+                width:100%;
+            }
+        }
+        .right-content {
+            float:right;
+            width: 46%;
+            padding: 10px;
+            .ch-price {
+                font-size:2.8em;
+            }
+            .quantity, .payments {
+                padding: 10px 0;
+            }
+            .ch-carousel.more-items {
+                overflow: hidden;
+            }
+        }
+    }
+}

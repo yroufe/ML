@@ -1,0 +1,79 @@
+﻿@import '_mixins.scss';
+.prod-bottom {
+    margin: 0 auto;
+    width:100%;
+
+    input {
+        height: 2.5em;
+        visibility: hidden;
+
+        &:hover {
+            + label {
+                background: $label-hover-bg; 
+                color: $label-hover-color; 
+            }
+        }
+
+        &:checked {
+            + label {
+                background: $label-active-bg; 
+                color: $label-active-color; 
+                position: relative;
+                z-index: 6;
+            }
+        }
+    }
+
+    label {
+        background: $label-bg; 
+        border-radius: .25em .25em 0 0;
+        color: $label-color; 
+        cursor: pointer;
+        display: block;
+        float: left;
+        font-size: 1em; 
+        height: 2.5em;
+        line-height: 2.5em;
+        margin-right: .25em;
+        padding: 0 1.5em;
+        text-align: center;
+    }
+
+    #content {
+        background: #f1f1f1; 
+        border-radius: 0 .25em .25em .25em;
+        min-height: 20em; 
+        position: relative;
+        width: 100%;
+        z-index: 5;
+        margin-top: -5px;
+
+        > div {
+            opacity: 0;
+            padding: 1.5em;
+            position: absolute;
+            z-index: -100;
+            span {
+                font-weight:bold;
+            }
+            p{
+                display: inline-block;
+                width: 95%;
+                vertical-align: top;
+            }
+            .Answer {
+                margin-left: 23px;
+            }
+        }
+
+        p {
+            clear: both;
+            margin-bottom: 1em;
+        }
+    }
+    input#tab-1:checked ~ #content #content-1, input#tab-2:checked ~ #content #content-2, input#tab-3:checked ~ #content #content-3 {
+         opacity: 1;
+         z-index: 100;
+
+    }
+}
